@@ -6,7 +6,7 @@ on:
 jobs:
   terraform-init-plan:
     name: Terraform Init and Plan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -37,7 +37,7 @@ jobs:
 
   terraform-apply:
     name: Terraform Apply
-    runs-on: ubuntu-latest
+    runs-on: 	ubuntu-24.04-arm
     needs: terraform-init-plan
     if: github.event_name == 'workflow_dispatch'
 
